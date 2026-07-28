@@ -1,0 +1,327 @@
+/* ==========================================
+   1. DESIGN SYSTEM & CSS VARIABLES
+   ========================================== */
+:root {
+    --primary-color: #e63946;    /* Merah khas EatNow / Makanan */
+    --primary-hover: #c1121f;
+    --secondary-color: #fdf0ed;  /* Warna aksen lembut */
+    --text-dark: #2d3142;
+    --text-muted: #6c757d;
+    --bg-light: #f8f9fa;
+    --white: #ffffff;
+    --border-color: #e9ecef;
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================
+   2. RESET & BASE STYLES
+   ========================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* ==========================================
+   3. HEADER & NAVBAR (FLEXBOX)
+   ========================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--white);
+    padding: 18px 40px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo a {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.cart-icon button {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* ==========================================
+   4. PRODUCT SECTION (CSS GRID)
+   ========================================== */
+.product-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 Kolom Seimbang di Desktop */
+    gap: 40px;
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+}
+
+/* Galeri Gambar */
+.product-gallery #main-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    object-fit: cover;
+}
+
+.thumbnail-list {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.thumbnail-list .thumb {
+    width: 70px;
+    height: 70px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    border: 2px solid transparent;
+    object-fit: cover;
+}
+
+.thumbnail-list .thumb.active,
+.thumbnail-list .thumb:hover {
+    border-color: var(--primary-color);
+}
+
+/* Informasi Produk */
+.badge {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 4px 12px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.product-info h1 {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.description {
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+/* Form Pembelian (Flexbox) */
+.purchase-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.quantity-picker {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.quantity-picker button {
+    background-color: var(--bg-light);
+    border: none;
+    width: 38px;
+    height: 38px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.quantity-picker input {
+    width: 45px;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+.btn-add-cart {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 12px 24px;
+    font-weight: 700;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    flex-grow: 1;
+    transition: background-color 0.2s;
+}
+
+.btn-add-cart:hover {
+    background-color: var(--primary-hover);
+}
+
+/* ==========================================
+   5. PRODUCT ACCORDION & SPECS
+   ========================================== */
+.product-specs {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+}
+
+.product-specs h2 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+details {
+    border-bottom: 1px solid var(--border-color);
+    padding: 12px 0;
+}
+
+summary {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+details p, details ol {
+    margin-top: 10px;
+    color: var(--text-muted);
+    padding-left: 20px;
+}
+
+/* ==========================================
+   6. AI CHEF CHATBOT SECTION (DESAIN MODIFIKASI)
+   ========================================== */
+.ai-assistant-section {
+    background: linear-gradient(135deg, #ffffff 0%, var(--secondary-color) 100%);
+    padding: 30px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(230, 57, 70, 0.2);
+    margin-bottom: 40px;
+}
+
+.ai-assistant-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.ai-box {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ai-box input {
+    padding: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+}
+
+.ai-box button {
+    background-color: var(--text-dark);
+    color: var(--white);
+    border: none;
+    padding: 12px;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.ai-box button:hover {
+    background-color: #000000;
+}
+
+.response-container {
+    background-color: var(--white);
+    padding: 15px;
+    border-radius: var(--radius-sm);
+    border-left: 4px solid var(--primary-color);
+    min-height: 50px;
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   7. FOOTER
+   ========================================== */
+.footer {
+    text-align: center;
+    padding: 25px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   8. MEDIA QUERIES (RESPONSIF MOBILE)
+   ========================================== */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        display: none; /* Sederhanakan untuk mobile */
+    }
+
+    .product-detail {
+        grid-template-columns: 1fr; /* Tumpuk jadi 1 kolom di HP */
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .purchase-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .quantity-picker {
+        justify-content: center;
+    }
+}

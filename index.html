@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EatNow - Bakso Kuah Siap Makan</title>
+    <!-- Penghubung File CSS -->
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <!-- 1. HEADER / NAVIGATION -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="#">EatNow</a>
+        </div>
+        <nav class="nav-links">
+            <a href="#">Produk</a>
+            <a href="#">Tentang Kami</a>
+            <a href="#">Kontak</a>
+        </nav>
+        <div class="cart-icon">
+            <button aria-label="Keranjang Belanja">🛒 <span id="cart-count">0</span></button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="container">
+        
+        <!-- 2. PRODUCT SECTION -->
+        <section class="product-detail">
+            <!-- Kolom Kiri: Galeri -->
+            <div class="product-gallery">
+                <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=600&auto=format&fit=crop" alt="Bakso Kuah EatNow" id="main-image">
+                <div class="thumbnail-list">
+                    <img src="https://assets.pikiran-rakyat.com/crop/0x241:720x703/720x0/webp/photo/2023/01/25/532429404.jpg" alt="Detail Bakso" class="thumb active">
+                    <img src="https://sgp1.digitaloceanspaces.com/radarbogor/2019/11/Bakso-enak.jpg" alt="Kemasan EatNow" class="thumb">
+                </div>
+            </div>
+
+            <!-- Kolom Kanan: Informasi & Transaksi -->
+            <div class="product-info">
+                <span class="badge">Siap Makan</span>
+                <h1>EatNow Bakso Kuah</h1>
+                <p class="price">Rp 35.000</p>
+                
+                <p class="description">
+                    Bakso sapi asli dengan kuah gurih kaya rempah, dikemas secara higienis dan praktis. Tinggal panaskan 3 menit, siap dinikmati!
+                </p>
+
+                <!-- Form Pembelian -->
+                <div class="purchase-actions">
+                    <div class="quantity-picker">
+                        <button id="btn-minus" type="button">-</button>
+                        <input type="number" id="qty" value="1" min="1">
+                        <button id="btn-plus" type="button">+</button>
+                    </div>
+                    <button class="btn-add-cart">Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 3. PRODUCT SPECIFICATION / ACCORDION -->
+        <section class="product-specs">
+            <h2>Informasi Detail</h2>
+            <details>
+                <summary>Cara Penyajian</summary>
+                <ol>
+                    <li>Rendam kemasan pouch dalam air panas selama 3-5 menit, ATAU</li>
+                    <li>Tuang ke dalam mangkuk dan panaskan di microwave selama 2 menit.</li>
+                </ol>
+            </details>
+            <details>
+                <summary>Komposisi & Nilai Gizi</summary>
+                <p>Daging sapi pilihan, air, bumbu rempah-rempah, garam, penyedap rasa.</p>
+            </details>
+        </section>
+
+        <!-- 4. MODIFIKASI: AI FEATURE SECTION -->
+        <section class="ai-assistant-section">
+            <h2>🤖 Asisten Kuliner EatNow (AI)</h2>
+            <p>Bingung mau makan Bakso Kuah ini bareng apa? Tanya AI kami untuk rekomendasi *food pairing* atau kreasi resep unik!</p>
+            
+            <div class="ai-box">
+                <input type="text" id="ai-input" placeholder="Contoh: Saya punya nasi dan telur, cocok dibuat apa dengan Bakso EatNow?">
+                <button id="ai-submit-btn">Minta Rekomendasi</button>
+                <div id="ai-response" class="response-container">
+                    <!-- Jawaban dari API Gemini akan muncul di sini -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 5. FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2026 EatNow Redesign Project. Dibuat untuk Tantangan Portofolio.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
